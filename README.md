@@ -4,7 +4,7 @@ Progetto GPOI utilizzando Model, View & Controller
 
 ## Local URL
 
-Click here -> <http://localhost/mvc>
+Click here -> <http://localhost/mvc/public>
 
 ## Componenti
 
