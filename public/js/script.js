@@ -2,8 +2,13 @@ $(document).ready(function () {
     $('#message-form').submit(function (event) {
         event.preventDefault();
         var message = $('#message-input').val();
+
+        if (message.trim() === '')
+            return;
+
         $('.conversation').append('<div class="message user-message">' + message + '</div>');
         $('#message-input').val('');
+
         sendMessage(message);
     });
 

@@ -4,7 +4,6 @@ require "../../vendor/autoload.php";
 
 use Orhanerday\OpenAi\OpenAi;
 
-$open_ai_key = "null";
 $open_ai_key = getenv('OPENAI_API_KEY');
 echo "openai key: " . $open_ai_key . "<br />" . "<br />";
 $open_ai = new OpenAi($open_ai_key);
