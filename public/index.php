@@ -16,8 +16,8 @@
     <div class="container-fluid">
         <?php require("../app/view/template/header.php"); ?>
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
+            <div class="col-6">
+                <h1>Domande</h1>
                 <div class="chat-container">
                     <div class="chat"></div>
                     <form class="message-form">
@@ -26,7 +26,16 @@
                     </form>
                 </div>
             </div>
-            <div class="col-4"></div>
+            <div class="col-6">
+                <h1>Risposte</h1>
+                <div class="chat-container">
+                    <div class="chat"></div>
+                    <form class="message-form">
+                        <input type="text" class="message-input" placeholder="Scrivi un messaggio...">
+                        <button type="submit" class="message-submit">Invia</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <?php require("../app/view/template/footer.php"); ?>
     </div>
