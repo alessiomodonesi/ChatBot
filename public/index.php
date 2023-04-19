@@ -21,28 +21,46 @@
 </head>
 
 <body>
-    <!-- header.php -->
-    <?php require("../app/view/template/header.php"); ?>
+    <div class="row">
+        <!-- header.php -->
+        <?php //require("../app/view/template/header.php"); ?>
+    </div>
 
-    <!-- chatbot-container -->
-    <div class="chatbot-container">
-        <div class="header">
-            <div class="bot-icon">Bot</div>
-            <div class="bot-name">Chat Bot</div>
-        </div>
-        <div class="conversation-container">
-            <div class="conversation"></div>
-        </div>
-        <div class="input-container">
-            <form id="message-form">
-                <input type="text" id="message-input" placeholder="Type your message here...">
-                <button class="btn btn-success" type="submit" id="send-button">Send</button>
-            </form>
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            <!-- chatbot-container -->
+
+            <!-- <div class="row" style="background-color: #4F4557;">
+                <h1>Bot</h1>
+            </div> -->
+
+            <div class="chatbot-container">
+                <div class="row">
+                    <div class="header">
+                        <div class="bot-icon">Bot</div>
+                        <div class="bot-name">Chat Bot</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="conversation-container">
+                        <div class="conversation"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="d-flex" id="message-form">
+                        <input class="col-11" type="text" id="message-input" placeholder="Type your message here...">
+                        <button class="btn btn-success col-1" type="submit" id="send-button">Send</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- footer.php -->
-    <?php require("../app/view/template/footer.php"); ?>
+    <div class="row">
+        <!-- footer.php -->
+        <?php require("../app/view/template/footer.php"); ?>
+    </div>
 </body>
 
 </html>

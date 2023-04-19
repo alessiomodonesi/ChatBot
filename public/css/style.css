@@ -1,8 +1,23 @@
+.row {
+    width: 100% !important;
+}
+
+body {
+    background-color: #393646;
+}
+
+.navbar-brand {
+    color: #F4EEE0;
+}
+
+.bot-name {
+    color: #F4EEE0;
+}
+
 .chatbot-container {
-    background-color: #f3f3f3;
+    background-color: #4F4557;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #aaa;
-    max-width: 500px;
+    box-shadow: 0px 0px 10px #6D5D6E;
     margin: 50px auto;
     padding: 20px;
 }
@@ -14,7 +29,7 @@
 }
 
 .bot-icon {
-    background-color: green;
+    background-color: #4E9F3D;
     border-radius: 50%;
     color: #fff;
     font-weight: bold;
@@ -31,16 +46,15 @@ input[type="text"] {
     border-radius: 20px;
     font-size: 16px;
     padding: 10px;
-    width: 80%;
 }
 
 #send-button {
-    background-color: green;
+    background-color: #4E9F3D;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
-    padding: 10px 20px;
+    margin-left: 1.5vw;
 }
 
 .conversation {
