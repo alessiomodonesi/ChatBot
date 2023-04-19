@@ -1,8 +1,12 @@
 <?php
-require "../../vendor/autoload.php"; // remove this line if you use a PHP Framework.
+
+require "../../vendor/autoload.php";
+
 use Orhanerday\OpenAi\OpenAi;
 
-$open_ai_key = getenv('OPENAI_API_KEY');
+$open_ai_key = "null";
+// $open_ai_key = getenv('OPENAI_API_KEY');
+echo "openai key: " . $open_ai_key . "<br />" . "<br />";
 $open_ai = new OpenAi($open_ai_key);
 
 $chat = $open_ai->chat([
@@ -32,12 +36,6 @@ $chat = $open_ai->chat([
 ]);
 
 
-var_dump($chat);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-// decode response
-$d = json_decode($chat);
-// Get Content
-echo ($d->choices[0]->message->content);
-?>
+echo $chat . "<br />";
+$response = json_decode($chat);
+echo ($response->choices[0]->message->content);
