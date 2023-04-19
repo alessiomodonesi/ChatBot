@@ -39,7 +39,10 @@ $chat = $open_ai->chat([
     'presence_penalty' => 0,
 ]);
 
+if (php_sapi_name() === 'cli')
+    echo $chat . "\n";
+else
+    echo $chat . "<br />";
 
-echo $chat . "<br />";
 $response = json_decode($chat);
 echo ($response->choices[0]->message->content);
