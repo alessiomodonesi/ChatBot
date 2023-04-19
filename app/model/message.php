@@ -9,7 +9,7 @@ class Message
     public function requestResponse($messages)
     {
         $open_ai_key = getenv('OPENAI_API_KEY');
-        echo "openai key: " . $open_ai_key . "<br />" . "<br />";
+        echo "openai key: " . $open_ai_key . "<br />";
         $open_ai = new OpenAi($open_ai_key);
 
         $chat = $open_ai->chat([
@@ -21,10 +21,8 @@ class Message
             'presence_penalty' => 0,
         ]);
 
-
         echo $chat . "<br />";
         $response = json_decode($chat);
-        echo ($response->choices[0]->message->content);
         return $response->choices[0]->message->content;
     }
 }

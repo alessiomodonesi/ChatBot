@@ -1,9 +1,9 @@
-.row {
-    width: 100% !important;
-}
-
 body {
     background-color: #393646;
+}
+
+.row {
+    width: 100%;
 }
 
 .navbar-brand {
@@ -12,6 +12,7 @@ body {
 
 .bot-name {
     color: #F4EEE0;
+    font-size: 25px;
 }
 
 .chatbot-container {
@@ -29,7 +30,7 @@ body {
 }
 
 .bot-icon {
-    background-color: #4E9F3D;
+    background-color: green;
     border-radius: 50%;
     color: #fff;
     font-weight: bold;
@@ -49,7 +50,7 @@ input[type="text"] {
 }
 
 #send-button {
-    background-color: #4E9F3D;
+    background-color: green;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -76,7 +77,7 @@ input[type="text"] {
 }
 
 .bot-message {
-    background-color: #3498db;
+    background-color: transparent;
     color: #fff;
     align-self: flex-start;
 }

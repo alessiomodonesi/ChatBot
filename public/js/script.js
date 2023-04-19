@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    let message_history = Array();
+    let history = Array();
+
     $('#message-form').submit(function (event) {
         event.preventDefault();
         var message = $('#message-input').val();
@@ -9,7 +10,8 @@ $(document).ready(function () {
 
         $('.conversation').append('<div class="message user-message">' + message + '</div>');
         $('#message-input').val('');
-        message_history.push(message);
+
+        history.push(message);
         sendMessage(message);
     });
 
@@ -17,18 +19,12 @@ $(document).ready(function () {
         $.ajax({
             url: '/chatbot/app/model/index.php',
             method: 'POST',
-            data: { message: message_history },
+            data: { message: history },
             success: function (response) {
-                //console.log(response);
                 $('.conversation').append('<div class="message bot-message">' + response + '</div>');
                 $('.conversation').scrollTop($('.conversation')[0].scrollHeight);
-                message_history.push(response);
-                //console.log(message_history);
+                history.push(response);
             }
         });
-    }
-
-    function messageHistory(){
-
     }
 });
