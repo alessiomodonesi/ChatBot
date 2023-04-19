@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     function sendMessage(message) {
         $.ajax({
-            url: '/mvc/app/model/bot.php',
+            url: '/chatbot/app/model/index.php',
             method: 'POST',
             data: { message: message },
             success: function (response) {
