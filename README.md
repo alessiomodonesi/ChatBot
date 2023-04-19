@@ -4,11 +4,11 @@ Progetto GPOI utilizzando Model, View & Controller
 
 ## Local URL for Front-End
 
-Click here -> <http://localhost/mvc/public>
+Click here -> <http://localhost/chatbot/public>
 
 ## Local URL for Back-End
 
-Click here -> <http://localhost/mvc/app>
+Click here -> <http://localhost/chatbot/app>
 
 ## Componenti
 
@@ -16,7 +16,8 @@ M. Gallinaro, A. Modonesi, C. Mondini, M. Zanini
 
 ## Descrizione
 
-In questo esempio, la cartella principale del progetto è "mvc". All'interno della cartella, abbiamo la cartella "app" che contiene la nostra applicazione. All'interno di "app", abbiamo tre cartelle principali: "controller", "view" e "model".
+In questo esempio, abbiamo la cartella "app" che contiene la nostra applicazione.
+All'interno di "app", abbiamo tre cartelle principali: "controller", "view" e "model".
 Queste sottocartelle rappresentano i tre componenti principali del pattern MVC.
 
 All'interno della cartella "controller", abbiamo diversi file che rappresentano i controller della nostra applicazione.
