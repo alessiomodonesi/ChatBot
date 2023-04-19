@@ -1,41 +1,69 @@
-.chat-container {
+.chatbot-container {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #aaa;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.header {
     display: flex;
-    flex-direction: column;
-    height: 300px;
-    width: 400px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-top: 50px;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.chat {
-    overflow-y: scroll;
-    padding: 10px;
+.bot-icon {
+    background-color: #2ecc71;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+    margin-right: 10px;
 }
 
-.message-form {
-    display: flex;
-    justify-content: space-between;
-    margin-top: auto;
-    background-color: #f5f5f5;
-    padding: 10px;
-}
-
-.message-input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 5px;
+input[type="text"] {
     border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 10px;
+    width: 80%;
 }
 
-.message-submit {
-    padding: 10px;
-    border-radius: 5px;
+button {
+    background-color: #2ecc71;
     border: none;
-    background-color: #4CAF50;
-    color: white;
+    border-radius: 20px;
+    color: #fff;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 1vw;
+    padding: 10px 20px;
+}
+
+.conversation {
+    max-height: 200px;
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #2ecc71;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #3498db;
+    color: #fff;
+    align-self: flex-start;
 }
