@@ -5,7 +5,12 @@ require "../../vendor/autoload.php";
 use Orhanerday\OpenAi\OpenAi;
 
 $open_ai_key = getenv('OPENAI_API_KEY');
-echo "openai key: " . $open_ai_key . "<br />";
+
+if (php_sapi_name() === 'cli')
+    echo "\nopenai key: " . $open_ai_key . "\n";
+else
+    echo "openai key: " . $open_ai_key . "<br />";
+
 $open_ai = new OpenAi($open_ai_key);
 
 $chat = $open_ai->chat([
