@@ -1,4 +1,4 @@
-# MVC-Search
+# Chat Bot
 
 Progetto GPOI utilizzando Model, View & Controller
 
