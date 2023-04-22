@@ -1,5 +1,12 @@
 <?php
 
+function setInput()
+{
+    echo "Type your message here: \n";
+    $handle = fopen("php://stdin", "r");
+    return fgets($handle);
+}
+
 function createHistory($msgs)
 {
     $message = array();
@@ -12,18 +19,4 @@ function createHistory($msgs)
         array_push($message, ['role' => $role, 'content' => $msgs[$i]]);
     endfor;
     echo json_encode(array('message' => $message));
-}
-
-function setInput()
-{
-    echo "Type something\n";
-    $handle = fopen("php://stdin", "r");
-    return fgets($handle);
-}
-
-function getOutput()
-{
-    $input = setInput();
-    $response = "Your message: " . $input;
-    echo $response;
 }
