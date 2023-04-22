@@ -2,9 +2,9 @@
 
 Progetto GPOI utilizzando Model, View & Controller
 
-## Local URL for Front-End
+## Local URL for the Chat
 
-Click here -> <http://localhost/chatbot/public>
+Click here -> <http://localhost/chatbot>
 
 ## Local URL for Back-End
 
