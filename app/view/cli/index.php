@@ -13,4 +13,4 @@ $message = [
 ];
 
 $response = $chatbot->requestResponse($message);
-echo $response . "\n\n";
+echo $response . "\n";
