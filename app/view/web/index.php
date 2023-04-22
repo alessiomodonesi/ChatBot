@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="header">
                     <div class="bot-icon">
-                        <img src="/chatbot/public/img/logo.png" alt="bot image" width="60" height="60" style="margin-top: 5px;">
+                        <img src="/chatbot/public/img/logo.png" alt="bot image" width="52" height="52" style="margin-top: 5px;">
                     </div>
                     <div class="bot-name">Chat Bot</div>
                 </div>

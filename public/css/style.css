@@ -1,16 +1,3 @@
-/* Hide scrollbar for Chrome, Safari and Opera */
-.conversation::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.conversation {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-}
-
 body {
     background-color: #393646;
 }
@@ -45,13 +32,9 @@ body {
 .bot-icon {
     background-color: green;
     border-radius: 50%;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    height: 70px;
-    line-height: 40px;
+    height: 60px;
     text-align: center;
-    width: 70px;
+    width: 60px;
     margin-right: 10px;
 }
 
@@ -72,10 +55,17 @@ input[type="text"] {
 }
 
 .conversation {
-    /* max-height: 200px; */
     overflow-y: scroll;
-    /* padding-right: 10px; */
     height: 75vh;
+}
+
+.conversation::-webkit-scrollbar {
+    display: none;
+}
+
+.conversation {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .message {
