@@ -1,7 +1,7 @@
-$(document).ready(function () {
+$(document).ready(() => {
     let history = Array();
 
-    $('#message-form').submit(function (event) {
+    $('#message-form').submit((event) => {
         event.preventDefault();
         var message = $('#message-input').val();
 
@@ -17,13 +17,13 @@ $(document).ready(function () {
 
     function sendMessage(message) {
         $.ajax({
-            url: '/chatbot/app/model/index.php',
+            url: '/chatbot/app/controller/getResponse.php',
             method: 'POST',
-            data: { message: history },
-            success: function (response) {
+            data: { message: message },
+            success: (response) => {
+                // history.push(response);
                 $('.conversation').append('<div class="message bot-message">' + response + '</div>');
                 $('.conversation').scrollTop($('.conversation')[0].scrollHeight);
-                history.push(response);
             }
         });
     }

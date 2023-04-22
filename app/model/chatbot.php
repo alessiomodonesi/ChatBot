@@ -4,12 +4,14 @@ require "../../vendor/autoload.php";
 
 use Orhanerday\OpenAi\OpenAi;
 
-class Message
+class ChatBot
 {
+    private $open_ai_key = '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';
+    // private static $open_ai_key = getenv('OPENAI_API_KEY');
+
     public function requestResponse($messages)
     {
-        $open_ai_key = getenv('OPENAI_API_KEY');
-        $open_ai = new OpenAi($open_ai_key);
+        $open_ai = new OpenAi($this->open_ai_key);
 
         $chat = $open_ai->chat([
             'model' => 'gpt-3.5-turbo',

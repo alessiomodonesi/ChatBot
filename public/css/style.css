@@ -92,7 +92,7 @@ input[type="text"] {
 }
 
 .bot-message {
-    background-color: transparent;
+    background-color: #3498db;
     color: #fff;
     align-self: flex-start;
 }
