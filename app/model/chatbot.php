@@ -9,7 +9,7 @@ use Orhanerday\OpenAi\OpenAi;
 
 class ChatBot
 {
-    // private static $open_ai_key = getenv('OPENAI_API_KEY');
+    // private $open_ai_key = getenv('OPENAI_API_KEY');
     private $open_ai_key = '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';
 
     public function requestResponse($messages)
