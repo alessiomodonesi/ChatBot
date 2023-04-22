@@ -1,3 +1,16 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.conversation::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.conversation {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
 body {
     background-color: #393646;
 }
@@ -19,7 +32,7 @@ body {
     background-color: #4F4557;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #6D5D6E;
-    margin: 50px auto;
+    margin: 25px auto;
     padding: 20px;
 }
 
@@ -59,15 +72,17 @@ input[type="text"] {
 }
 
 .conversation {
-    max-height: 200px;
+    /* max-height: 200px; */
     overflow-y: scroll;
-    padding-right: 10px;
+    /* padding-right: 10px; */
+    height: 75vh;
 }
 
 .message {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
+    overflow-wrap: break-word;
 }
 
 .user-message {
