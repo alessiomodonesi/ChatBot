@@ -1,6 +1,9 @@
 <?php
 
-require "../../vendor/autoload.php";
+if (php_sapi_name() === 'cli')
+    require getcwd() . "/vendor/autoload.php";
+else
+    require "../../vendor/autoload.php";
 
 use Orhanerday\OpenAi\OpenAi;
 
