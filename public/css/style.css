@@ -73,6 +73,7 @@ input[type="text"] {
     padding: 10px;
     border-radius: 5px;
     overflow-wrap: break-word;
+    max-width: 50%;
 }
 
 .user-message {
@@ -89,6 +90,7 @@ input[type="text"] {
 
 .message.bot-message.loader {
     position: relative;
+    height: 6vh;
 }
 
 .message.bot-message.loader:after {
@@ -123,9 +125,5 @@ input[type="text"] {
     background-color: white;
     border: none;
     cursor: pointer;
-}
-
-.copy-user:hover,
-.copy-bot:hover {
-    background-color: white;
+    height: 4vh;
 }
