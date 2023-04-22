@@ -2,7 +2,7 @@
 
 function setInput()
 {
-    echo "Type your message here: \n";
+    echo "Type your message here: ";
     $handle = fopen("php://stdin", "r");
     return fgets($handle);
 }
