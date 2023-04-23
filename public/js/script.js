@@ -10,8 +10,8 @@ $(document).ready(() => {
 
         $('.conversation').append('<div class="d-flex justify-content-between">' +
             '<div class="message user-message">' + message +
-            '<a class="btn btn-light copy-user ml-auto" role="button">' +
-            '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></a>' +
+            '<button class="btn btn-light user-btn ml-auto">' +
+            '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
             '</div></div>');
         $('#message-input').val('');
 
@@ -32,20 +32,30 @@ $(document).ready(() => {
                 $('.conversation .loader').remove();
                 $('.conversation').append('<div class="d-flex justify-content-between">' +
                     '<div class="message bot-message">' + response +
-                    '<a class="btn btn-light copy-bot ml-auto" role="button">' +
-                    '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></a>' +
+                    '<button class="btn btn-light bot-btn ml-auto">' +
+                    '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
                     '</div></div>');
                 $('.conversation').scrollTop($('.conversation')[0].scrollHeight);
+
+                var element = document.querySelector('.user-message');
+                console.log("user: " + element.textContent);
+                element = document.querySelector('.bot-message');
+                console.log("bot: " + element.textContent);
             }
         });
     }
-    $('.user-btn').click(() => {
-        var text = $(".message user-message").text();
+
+    $('button .user-btn').click(() => {
+        alert("Hai cliccato sul pulsante!");
+        var element = document.querySelector('.user-message');
+        var text = element.textContent;
         console.log(text);
     });
 
-    $('.bot-btn').click(() => {
-        var text = $(".message bot-message").text();
+    $('button .bot-btn').click(() => {
+        alert("Hai cliccato sul pulsante!");
+        var element = document.querySelector('.bot-message');
+        var text = element.textContent;
         console.log(text);
     });
 });

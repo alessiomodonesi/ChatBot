@@ -118,8 +118,8 @@ input[type="text"] {
     }
 }
 
-.copy-user,
-.copy-bot {
+.user-btn,
+.bot-btn {
     margin-left: 5vw;
     border-radius: 50%;
     background-color: white;
