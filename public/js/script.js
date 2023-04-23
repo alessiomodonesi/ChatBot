@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    let history = Array();
+    var history = Array();
 
     $('#message-form').submit((event) => {
         event.preventDefault();
@@ -8,14 +8,15 @@ $(document).ready(() => {
         if (message.trim() === '')
             return;
 
+        history.push(message);
         $('.conversation').append('<div class="d-flex justify-content-between">' +
-            '<div class="message user-message">' + message +
-            '<button class="btn btn-light user-btn ml-auto">' +
+            '<div class="message user-message" id="message-' + history.length + '">' + message +
+            '<button class="btn btn-light user-btn ml-auto" onclick="copiaTesto(\'' + history.length + '\')">' +
             '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
             '</div></div>');
         $('#message-input').val('');
 
-        history.push(message);
+        //console.log(history);
         sendMessage(message);
     });
 
@@ -28,11 +29,12 @@ $(document).ready(() => {
             method: 'POST',
             data: { message: message },
             success: (response) => {
-                // history.push(response);
+                history.push(response);
+                //console.log(history);
                 $('.conversation .loader').remove();
                 $('.conversation').append('<div class="d-flex justify-content-between">' +
-                    '<div class="message bot-message">' + response +
-                    '<button class="btn btn-light bot-btn ml-auto">' +
+                    '<div class="message bot-message" id="message-' + history.length + '">' + response +
+                    '<button class="btn btn-light bot-btn ml-auto" onclick="copiaTesto(\'' + history.length + '\')">' +
                     '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
                     '</div></div>');
                 $('.conversation').scrollTop($('.conversation')[0].scrollHeight);
@@ -44,18 +46,13 @@ $(document).ready(() => {
             }
         });
     }
-
-    $('button .user-btn').click(() => {
-        alert("Hai cliccato sul pulsante!");
-        var element = document.querySelector('.user-message');
-        var text = element.textContent;
-        console.log(text);
-    });
-
-    $('button .bot-btn').click(() => {
-        alert("Hai cliccato sul pulsante!");
-        var element = document.querySelector('.bot-message');
-        var text = element.textContent;
-        console.log(text);
-    });
 });
+
+function copiaTesto(idContenitore) {
+    var testo = $('#message-' + idContenitore).text(); //prende il testo all'interno del div
+    var inputTemporaneo = $('<input>'); //crea un campo di input temporaneo
+    $('body').append(inputTemporaneo); //aggiunge l'input temporaneo al body della pagina
+    inputTemporaneo.val(testo).select(); //imposta il valore dell'input e lo seleziona
+    document.execCommand('copy'); //copia il testo selezionato nella clipboard
+    inputTemporaneo.remove(); //rimuove l'input temporaneo dalla pagina
+}
