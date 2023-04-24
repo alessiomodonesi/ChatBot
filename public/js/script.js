@@ -10,7 +10,7 @@ $(document).ready(() => {
             return;
 
         history.push(message);
-        $('.conversation').append('<div class="d-flex justify-content-between">' +
+        $('.conversation').append('<div class="d-flex justify-content-end">' +
             '<div class="message user-message" id="message-' + history.length + '">' + message +
             '<button class="btn btn-light user-btn ml-auto" onclick="copiaTesto(\'' + history.length + '\')">' +
             '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
@@ -36,7 +36,7 @@ $(document).ready(() => {
                 history.push(response);
                 //console.log(history);
                 $('.conversation .loader').remove();
-                $('.conversation').append('<div class="d-flex justify-content-between">' +
+                $('.conversation').append('<div class="d-flex justify-content-start">' +
                     '<div class="message bot-message" id="message-' + history.length + '">' + message_result +
                     '<button class="btn btn-light bot-btn ml-auto" onclick="copiaTesto(\'' + history.length + '\')">' +
                     '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
@@ -66,18 +66,18 @@ $(document).ready(() => {
         });
     }
 
-    function showCodeInBox(message){
+    function showCodeInBox(message) {
         var messages = message.split("```");
         console.log(messages.length);
         console.log(messages);
         var response = "";
-        for(var i = 0 ; i  < messages.length ; i++){
-            switch(i % 2 == 0){
+        for (var i = 0; i < messages.length; i++) {
+            switch (i % 2 == 0) {
                 case true:
                     response += messages[i];
                     break;
                 case false:
-                    response += '<br><br><code class="language-js line-numbers" data-prismjs-copy="COPIA COPIAAAA">' +messages[i] + '</code></br></br>' ;
+                    response += '<br><br><code class="language-js line-numbers" data-prismjs-copy="COPIA COPIAAAA">' + messages[i] + '</code></br></br>';
                     break;
             }
         }
