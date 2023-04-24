@@ -32,11 +32,12 @@ $(document).ready(() => {
             method: 'POST',
             data: { message: message },
             success: (response) => {
+                var message_result = showCodeInBox(response);
                 history.push(response);
                 //console.log(history);
                 $('.conversation .loader').remove();
                 $('.conversation').append('<div class="d-flex justify-content-between">' +
-                    '<div class="message bot-message" id="message-' + history.length + '">' + response +
+                    '<div class="message bot-message" id="message-' + history.length + '">' + message_result +
                     '<button class="btn btn-light bot-btn ml-auto" onclick="copiaTesto(\'' + history.length + '\')">' +
                     '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
                     '</div></div>');
@@ -63,6 +64,24 @@ $(document).ready(() => {
                 });*/
             }
         });
+    }
+
+    function showCodeInBox(message){
+        var messages = message.split("```");
+        console.log(messages.length);
+        console.log(messages);
+        var response = "";
+        for(var i = 0 ; i  < messages.length ; i++){
+            switch(i % 2 == 0){
+                case true:
+                    response += messages[i];
+                    break;
+                case false:
+                    response += '<br><br><code class="language-js line-numbers" data-prismjs-copy="COPIA COPIAAAA">' +messages[i] + '</code></br></br>' ;
+                    break;
+            }
+        }
+        return response;
     }
 
 });

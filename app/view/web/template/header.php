@@ -17,6 +17,14 @@
 <!-- jquery -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
 
-   <!-- script.js -->
-   <script type="text/javascript" src="/chatbot/public/js/script.js"></script>
-   <script src="/chatbot/public/js/clipboard/dist/clipboard.min.js"></script>
+<!-- script.js -->
+<script type="text/javascript" src="/chatbot/public/js/script.js"></script>
+<script src="/chatbot/public/js/clipboard/dist/clipboard.min.js"></script>
+
+<!--prism js-->
+<script src="
+https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css
+" rel="stylesheet">

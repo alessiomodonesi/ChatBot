@@ -127,3 +127,11 @@ input[type="text"] {
     cursor: pointer;
     height: 4vh;
 }
+
+textarea
+{
+    border: none; 
+    resize: none;
+    width: 100%;
+    text-align: justify;   
+}
