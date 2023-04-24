@@ -1,4 +1,5 @@
 $(document).ready(() => {
+
     var history = Array();
 
     $('#message-form').submit((event) => {
@@ -16,9 +17,11 @@ $(document).ready(() => {
             '</div></div>');
         $('#message-input').val('');
 
-        //console.log(history);
+
+        history.push(message);
         sendMessage(message);
     });
+
 
     function sendMessage(message) {
         let wait = "Loading...";
@@ -40,19 +43,36 @@ $(document).ready(() => {
                 $('.conversation').scrollTop($('.conversation')[0].scrollHeight);
 
                 var element = document.querySelector('.user-message');
-                console.log("user: " + element.textContent);
+                //console.log("user: " + element.textContent);
                 element = document.querySelector('.bot-message');
-                console.log("bot: " + element.textContent);
+
+
+                /*var clipboard = new ClipboardJS("#bot"+count);
+
+                clipboard.on('success', function (e) {
+                    console.info('Action:', e.action);
+                    console.info('Text:', e.text);
+                    console.info('Trigger:', e.trigger);
+                  
+                    e.clearSelection();
+                });
+
+                clipboard.on('error', function(e) {
+                    console.error('Action:', e.action);
+                    console.error('Trigger:', e.trigger);
+                });*/
             }
         });
     }
+
 });
 
 function copiaTesto(idContenitore) {
     var testo = $('#message-' + idContenitore).text(); //prende il testo all'interno del div
-    var inputTemporaneo = $('<input>'); //crea un campo di input temporaneo
-    $('body').append(inputTemporaneo); //aggiunge l'input temporaneo al body della pagina
-    inputTemporaneo.val(testo).select(); //imposta il valore dell'input e lo seleziona
-    document.execCommand('copy'); //copia il testo selezionato nella clipboard
-    inputTemporaneo.remove(); //rimuove l'input temporaneo dalla pagina
+    //var inputTemporaneo = $('<input>'); //crea un campo di input temporaneo
+    //$('body').append(inputTemporaneo); //aggiunge l'input temporaneo al body della pagina
+    //inputTemporaneo.val(testo).select(); //imposta il valore dell'input e lo seleziona
+    //document.execCommand('copy'); //copia il testo selezionato nella clipboard
+    navigator.clipboard.writeText(testo);//copia il testo del div selezionato nella clipboard
+    //inputTemporaneo.remove(); //rimuove l'input temporaneo dalla pagina
 }

@@ -17,5 +17,6 @@
 <!-- jquery -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
 
-<!-- script.js -->
-<script type="text/javascript" src="/chatbot/public/js/script.js"></script>
+   <!-- script.js -->
+   <script type="text/javascript" src="/chatbot/public/js/script.js"></script>
+   <script src="/chatbot/public/js/clipboard/dist/clipboard.min.js"></script>
