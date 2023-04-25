@@ -12,7 +12,7 @@ $(document).ready(() => {
         history.push(message);
         $('.conversation').append('<div class="d-flex justify-content-end">' +
             '<div class="message user-message" id="message-' + history.length + '">' + message +
-            '<button class="btn btn-light user-btn ml-auto" onclick="copiaTesto(\'' + history.length + '\')">' +
+            '<button class="btn btn-light user-btn ml-auto" onclick="textCopy(\'' + history.length + '\')">' +
             '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
             '</div></div>');
         $('#message-input').val('');
@@ -39,7 +39,7 @@ $(document).ready(() => {
                 $('.conversation .loader').remove();
                 $('.conversation').append('<div class="d-flex justify-content-start">' +
                     '<div class="message bot-message" id="message-' + history.length + '">' + message_result +
-                    '<button class="btn btn-light bot-btn ml-auto" onclick="copiaTesto(\'' + history.length + '\')">' +
+                    '<button class="btn btn-light bot-btn ml-auto" onclick="textCopy(\'' + history.length + '\')">' +
                     '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
                     '</div></div>');
                 $('.conversation').scrollTop($('.conversation')[0].scrollHeight);
@@ -75,7 +75,7 @@ $(document).ready(() => {
                     response += messages[i];
                     break;
                 case false:
-                    response += '<br><br><code class="language-js line-numbers" data-prismjs-copy="COPIA COPIAAAA">' + messages[i] + '</code></br></br>';
+                    response += '<br /><br /><code class="language-js line-numbers" data-prismjs-copy="text-copy">' + messages[i] + '</code><br /><br />';
                     break;
             }
         }
@@ -84,12 +84,12 @@ $(document).ready(() => {
 
 });
 
-function copiaTesto(idContenitore) {
-    var testo = $('#message-' + idContenitore).text(); // prende il testo all'interno del div
-    // var inputTemporaneo = $('<input>'); // crea un campo di input temporaneo
-    // $('body').append(inputTemporaneo); // aggiunge l'input temporaneo al body della pagina
-    // inputTemporaneo.val(testo).select(); // imposta il valore dell'input e lo seleziona
+function textCopy(div_id) {
+    var testo = $('#message-' + div_id).text(); // prende il testo all'interno del div
+    // var input_tmp = $('<input>'); // crea un campo di input temporaneo
+    // $('body').append(input_tmp); // aggiunge l'input temporaneo al body della pagina
+    // input_tmp.val(testo).select(); // imposta il valore dell'input e lo seleziona
     // document.execCommand('copy'); // copia il testo selezionato nella clipboard
     navigator.clipboard.writeText(testo);// copia il testo del div selezionato nella clipboard
-    // inputTemporaneo.remove(); // rimuove l'input temporaneo dalla pagina
+    // input_tmp.remove(); // rimuove l'input temporaneo dalla pagina
 }
