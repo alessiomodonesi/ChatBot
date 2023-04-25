@@ -134,3 +134,7 @@ textarea {
     width: 100%;
     text-align: justify;
 }
+
+pre, code{
+    background-color: white;
+}
