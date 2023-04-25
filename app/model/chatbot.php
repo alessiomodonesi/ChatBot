@@ -1,9 +1,9 @@
 <?php
 
 if (php_sapi_name() === 'cli')
-    require getcwd() . "/vendor/autoload.php";
+    require(getcwd() . "/vendor/autoload.php");
 else
-    require "../../vendor/autoload.php";
+    require("../../vendor/autoload.php");
 
 use Orhanerday\OpenAi\OpenAi;
 
@@ -12,11 +12,15 @@ class ChatBot
     // private $open_ai_key = getenv('OPENAI_API_KEY');
     private $open_ai_key = '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';
 
-    public function requestResponse($messages)
+    private function init()
     {
         $open_ai = new OpenAi($this->open_ai_key);
+        return $open_ai;
+    }
 
-        $chat = $open_ai->chat([
+    public function requestResponse($messages)
+    {
+        $chat = $this->init()->chat([
             'model' => 'gpt-3.5-turbo',
             'messages' => $messages,
             'temperature' => 1.0,
