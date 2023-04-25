@@ -1,7 +1,7 @@
 <?php
 
-require getcwd() . "/app/model/chatbot.php";
-require getcwd() . "/app/model/functions.php";
+require(getcwd() . "/app/model/chatbot.php");
+require(getcwd() . "/app/model/functions.php");
 
 $chatbot = new ChatBot();
 $history = array();
