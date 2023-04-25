@@ -10,15 +10,15 @@ $(document).ready(() => {
     history.push(message);
     $(".conversation").append(
       '<div class="d-flex justify-content-end">' +
-        '<div class="message user-message" id="message-' +
-        history.length +
-        '">' +
-        message +
-        '<button class="btn btn-light user-btn ml-auto" onclick="textCopy(\'' +
-        history.length +
-        "')\">" +
-        '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
-        "</div></div>"
+      '<div class="message user-message" id="message-' +
+      history.length +
+      '">' +
+      message +
+      '<button class="btn btn-light user-btn ml-auto" onclick="textCopy(\'' +
+      history.length +
+      "')\">" +
+      '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
+      "</div></div>"
     );
     $("#message-input").val("");
 
@@ -44,15 +44,15 @@ $(document).ready(() => {
         $(".conversation .loader").remove();
         $(".conversation").append(
           '<div class="d-flex justify-content-start">' +
-            '<div class="message bot-message" id="message-' +
-            history.length +
-            '">' +
-            message_result +
-            '<button class="btn btn-light bot-btn ml-auto" onclick="textCopy(\'' +
-            history.length +
-            "')\">" +
-            '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
-            "</div></div>"
+          '<div class="message bot-message" id="message-' +
+          history.length +
+          '">' +
+          message_result +
+          '<button class="btn btn-light bot-btn ml-auto" onclick="textCopy(\'' +
+          history.length +
+          "')\">" +
+          '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
+          "</div></div>"
         );
         $(".conversation").scrollTop($(".conversation")[0].scrollHeight);
 
@@ -76,7 +76,9 @@ $(document).ready(() => {
           break;
         case false:
           response +=
-            '<br><button onclick="copyCodeSelected('+ count_code +')"><span>Copia</span></button><br><pre><code id="message-code-' +
+            '<br><button class="btn btn-light bot-btn" onclick="copyCodeSelected(' + count_code + ')">' +
+            '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23">' +
+            '</button><br><pre><code id="message-code-' +
             count_code +
             '" >' +
             messages[i] +
@@ -99,6 +101,6 @@ function textCopy(div_id) {
   // input_tmp.remove(); // rimuove l'input temporaneo dalla pagina
 }
 
-function copyCodeSelected(code_id){
-    navigator.clipboard.writeText(document.getElementById('message-code-' + code_id).textContent);
+function copyCodeSelected(code_id) {
+  navigator.clipboard.writeText(document.getElementById('message-code-' + code_id).textContent);
 }
