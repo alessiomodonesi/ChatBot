@@ -128,10 +128,9 @@ input[type="text"] {
     height: 4vh;
 }
 
-textarea
-{
-    border: none; 
+textarea {
+    border: none;
     resize: none;
     width: 100%;
-    text-align: justify;   
+    text-align: justify;
 }

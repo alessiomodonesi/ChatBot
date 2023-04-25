@@ -5,7 +5,7 @@ require getcwd() . "/app/model/functions.php";
 
 $chatbot = new ChatBot();
 
-while (true):
+while (true) :
     $message = [
         [
             "role" => "user",
