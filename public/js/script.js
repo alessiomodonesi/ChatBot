@@ -14,10 +14,10 @@ $(document).ready(() => {
       history.length +
       '">' +
       message +
-      '<button class="btn btn-light user-btn ml-auto" onclick="textCopy(\'' +
+      '<button class="btn btn-light user-btn ml-auto" onclick="copyQuestion(\'' +
       history.length +
       "')\">" +
-      '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
+      '<img src="/chatbot/public/img/reload.png" alt="reload image" width="30" height="30"></button>' +
       "</div></div>"
     );
     $("#message-input").val("");
@@ -91,14 +91,14 @@ $(document).ready(() => {
   }
 });
 
+
+function copyQuestion(div_id){
+  $('#message-input').val($('#message-input').val() + $('#message-' + div_id).text());
+}
+
 function textCopy(div_id) {
   var testo = $("#message-" + div_id).text(); // prende il testo all'interno del div
-  // var input_tmp = $('<input>'); // crea un campo di input temporaneo
-  // $('body').append(input_tmp); // aggiunge l'input temporaneo al body della pagina
-  // input_tmp.val(testo).select(); // imposta il valore dell'input e lo seleziona
-  // document.execCommand('copy'); // copia il testo selezionato nella clipboard
   navigator.clipboard.writeText(testo); // copia il testo del div selezionato nella clipboard
-  // input_tmp.remove(); // rimuove l'input temporaneo dalla pagina
 }
 
 function copyCodeSelected(code_id) {
