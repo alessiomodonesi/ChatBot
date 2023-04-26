@@ -14,7 +14,7 @@ $(document).ready(() => {
       history.length +
       '">' +
       message +
-      '<button class="btn btn-light user-btn ml-auto" onclick="copyQuestion(\'' +
+      '<button class="btn btn-light reload-btn ml-auto" onclick="copyQuestion(\'' +
       history.length +
       "')\">" +
       '<img src="/chatbot/public/img/reload.png" alt="reload image" width="30" height="30"></button>' +
@@ -48,7 +48,7 @@ $(document).ready(() => {
           history.length +
           '">' +
           message_result +
-          '<button class="btn btn-light bot-btn ml-auto" onclick="textCopy(\'' +
+          '<button class="btn btn-light copy-btn ml-auto" onclick="textCopy(\'' +
           history.length +
           "')\">" +
           '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
@@ -76,7 +76,7 @@ $(document).ready(() => {
           break;
         case false:
           response +=
-            '<br><button class="btn btn-light bot-btn" onclick="copyCodeSelected(' + count_code + ')">' +
+            '<br><button class="btn btn-light copy-btn" onclick="copyCodeSelected(' + count_code + ')">' +
             '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23">' +
             '</button><br><pre><code id="message-code-' +
             count_code +
@@ -92,7 +92,7 @@ $(document).ready(() => {
 });
 
 
-function copyQuestion(div_id){
+function copyQuestion(div_id) {
   $('#message-input').val($('#message-input').val() + $('#message-' + div_id).text());
 }
 
