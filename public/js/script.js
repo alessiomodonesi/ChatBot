@@ -1,27 +1,23 @@
 $(document).ready(() => {
   var history = Array();
   var count_code = 0;
+
   $("#message-form").submit((event) => {
     event.preventDefault();
     var message = $("#message-input").val();
 
     if (message.trim() === "") return;
-
     history.push(message);
+
     $(".conversation").append(
       '<div class="d-flex justify-content-end">' +
-      '<div class="message user-message" id="message-' +
-      history.length +
-      '">' +
-      message +
-      '<button class="btn btn-light reload-btn ml-auto" onclick="copyQuestion(\'' +
-      history.length +
-      "')\">" +
-      '<img src="/chatbot/public/img/reload.png" alt="reload image" width="30" height="30"></button>' +
+      '<div class="message user-message" id="message-' + history.length + '">' + message +
+      '<button class="btn btn-light restart-btn" onclick="copyQuestion(\'' + history.length + "')\">" +
+      '<img src="/chatbot/public/img/restart.png" alt="reload image" width="22" height="22"></button>' +
       "</div></div>"
     );
-    $("#message-input").val("");
 
+    $("#message-input").val("");
     history.push(message);
     sendMessage(message);
   });
@@ -39,23 +35,17 @@ $(document).ready(() => {
       success: (response) => {
         var message_result = showCodeInBox(response);
         history.push(response);
-        // console.log(history);
 
         $(".conversation .loader").remove();
         $(".conversation").append(
           '<div class="d-flex justify-content-start">' +
-          '<div class="message bot-message" id="message-' +
-          history.length +
-          '">' +
-          message_result +
-          '<button class="btn btn-light copy-btn ml-auto" onclick="textCopy(\'' +
-          history.length +
-          "')\">" +
-          '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23"></button>' +
+          '<div class="message bot-message" id="message-' + history.length + '">' + message_result +
+          '<button class="btn btn-light copy-btn" onclick="textCopy(\'' + history.length + "')\">" +
+          '<img src="/chatbot/public/img/copia.png" alt="copy image" width="30" height="30"></button>' +
           "</div></div>"
         );
-        $(".conversation").scrollTop($(".conversation")[0].scrollHeight);
 
+        $(".conversation").scrollTop($(".conversation")[0].scrollHeight);
         var element = document.querySelector(".user-message");
         element = document.querySelector(".bot-message");
         hljs.highlightAll();
@@ -65,8 +55,6 @@ $(document).ready(() => {
 
   function showCodeInBox(message) {
     var messages = message.split("```");
-    console.log(messages.length);
-    console.log(messages);
     var response = "";
 
     for (var i = 0; i < messages.length; i++) {
@@ -77,11 +65,8 @@ $(document).ready(() => {
         case false:
           response +=
             '<br><button class="btn btn-light copy-btn" onclick="copyCodeSelected(' + count_code + ')">' +
-            '<img src="/chatbot/public/img/copy.png" alt="copy image" width="23" height="23">' +
-            '</button><br><pre><code id="message-code-' +
-            count_code +
-            '" >' +
-            messages[i] +
+            '<img src="/chatbot/public/img/copia.png" alt="copy image" width="30" height="30">' +
+            '</button><br><pre><code id="message-code-' + count_code + '" >' + messages[i] +
             "</code></pre></br></br>";
           count_code++;
           break;
