@@ -1,5 +1,5 @@
 # Alessio Modonesi 5F
-# > sudo py index.py
+# > sudo python3 index.py
 
 import subprocess
 import keyboard

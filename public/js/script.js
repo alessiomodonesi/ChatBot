@@ -65,7 +65,7 @@ $(document).ready(() => {
         case false:
           response +=
             '<br><button class="btn btn-light copy-btn" onclick="copyCodeSelected(' + count_code + ')">' +
-            '<img src="/chatbot/public/img/copia.png" alt="copy image" width="30" height="30">' +
+            '<img src="/chatbot/public/img/code.png" alt="copy image" width="30" height="30">' +
             '</button><br><pre><code id="message-code-' + count_code + '" >' + messages[i] +
             "</code></pre></br></br>";
           count_code++;
