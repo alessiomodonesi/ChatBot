@@ -1,6 +1,15 @@
 var count_code = 0;
 
 $(document).ready(() => {
+  $("textarea").each(function () {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+  }).on("input", function () {
+    this.style.height = 0;
+    this.style.height = (this.scrollHeight) + "px";
+    this.style.marginTop = -34 + "px";
+  });
+
+
   var history = Array();
 
   $("#message-form").submit((event) => {
@@ -24,7 +33,7 @@ $(document).ready(() => {
     function sendMessage(message) {
       let wait = "Loading...";
       $(".conversation").append(
-        '<div class="message bot-message loader">' + wait + "</div>"
+        '<div class="message loader-message loader">' + wait + "</div>"
       );
 
       $.ajax({

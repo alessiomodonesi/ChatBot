@@ -17,9 +17,15 @@
             </div>
 
             <div class="row">
+            </div>
+
+            <div class="row">
                 <form class="d-flex" id="message-form" autocomplete="off">
-                    <input class="col-11" type="text" id="message-input" placeholder="Type your message here...">
-                    <button class="btn btn-success col-1" type="submit" id="send-button">Invia</button>
+                    <textarea class="col-11" id="message-input" placeholder="Type your message here..."></textarea>
+                    <!-- <input class="col-11" type="text" id="message-input" placeholder="Type your message here..."> -->
+                    <button class="btn btn-success" type="submit" id="send-button">
+                        <img class="send-img" src="/chatbot/public/img/send.png" alt="send image">
+                    </button>
                 </form>
             </div>
         </div>
