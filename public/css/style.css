@@ -10,10 +10,16 @@ body {
     color: #F4EEE0;
 }
 
-.bot-name {
+.name {
     color: #F4EEE0;
     font-size: 2vw;
     font-weight: bold;
+    text-decoration: none;
+}
+
+.name:hover {
+    color: #F4EEE0;
+    text-decoration: underline;
 }
 
 .chatbot-container {

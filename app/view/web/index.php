@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="header">
                     <div class="bot-icon">
-                        <a href="https://github.com/alessiomodonesi/chatbot">
-                            <img class="bot-logo" src="/chatbot/public/img/logo.png" alt="bot image" style="margin-top: 5px;">
-                        </a>
+                        <img class="bot-logo" src="/chatbot/public/img/logo.png" alt="bot image" style="margin-top: 5px;">
                     </div>
-                    <div class="bot-name">Chat Bot</div>
+                    <div class="bot-name">
+                        <a class="name" href="https://github.com/alessiomodonesi/chatbot">Chat Bot</a>
+                    </div>
                 </div>
             </div>
 
