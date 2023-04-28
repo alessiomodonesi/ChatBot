@@ -6,8 +6,7 @@
                 <div class="header">
                     <div class="bot-icon">
                         <a href="https://github.com/alessiomodonesi/chatbot">
-                            <img class="bot-logo" src="/chatbot/public/img/logo.png" alt="bot image"
-                                style="margin-top: 5px;">
+                            <img class="bot-logo" src="/chatbot/public/img/logo.png" alt="bot image" style="margin-top: 5px;">
                         </a>
                     </div>
                     <div class="bot-name">Chat Bot</div>
@@ -18,7 +17,7 @@
                 <div class="conversation"></div>
             </div>
 
-            <div class="row formBox">
+            <div class="row form-box">
                 <form class="d-flex" id="message-form" autocomplete="off">
                     <textarea class="col-11" id="message-input" placeholder="Type your message here..."></textarea>
                     <button class="btn btn-success" type="submit" id="send-button">

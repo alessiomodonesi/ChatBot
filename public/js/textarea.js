@@ -1,9 +1,8 @@
 $(document).ready(() => {
-    $("textarea").each(function () {
+    $("textarea").each(() => {
         this.setAttribute("style", "height:" + (this.scrollHeight) + "px;");
-    }).on("input", function () {
+    }).on("input", () => {
         this.style.height = 0;
         this.style.height = (this.scrollHeight) + "px";
-        //this.style.marginTop = -1.5 + "vh";
     });
 });

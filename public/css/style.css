@@ -44,14 +44,6 @@ body {
     margin-right: 10px;
 }
 
-/* input[type="text"] {
-    border: none;
-    border-radius: 15px;
-    font-size: 16px;
-    padding: 10px;
-    margin-left: 2vw;
-} */
-
 #send-button {
     background-color: #009400;
     border: none;
@@ -183,15 +175,10 @@ textarea {
     width: 30px;
 }
 
-/* .formBox {
-    margin-top: 3vh;
-} */
-
 textarea {
     overflow-y: scroll !important;
     resize: none;
     width: 74vw !important;
-    /* margin-left: 2.4vw; */
     border-radius: 15px;
     text-align: justify;
     max-height: 10vh;
