@@ -1,14 +1,18 @@
 // aggiunte combinazioni di tasti per invio e andare a capo
 $(document).on('keydown', '#message-input', (e) => {
     // enter per invio
-    if (e.which == 13)
+    if (e.which == 13) {
         $("#send-button").click();
+        // manca da resettare la textbox
+    }
 
     // shift + enter per andare a capo
     if (e.shiftKey && e.keyCode == 13)
         $(this).val($(this).val() + '\n');
 
     // cmd + k per cancellare la chat
-    if (e.keyCode == 75 && e.metaKey)
+    if (e.keyCode == 75 && e.metaKey) {
         $(".message").remove();
+        // manca da resettare la textbox
+    }
 });
