@@ -69,7 +69,8 @@ body {
 
 .conversation {
     overflow-y: scroll;
-    height: 72vh;
+    height: 70vh;
+    margin-bottom: 1vh;
 }
 
 .conversation::-webkit-scrollbar,
@@ -182,6 +183,10 @@ textarea {
     width: 30px;
 }
 
+/* .formBox {
+    margin-top: 3vh;
+} */
+
 textarea {
     overflow-y: scroll !important;
     resize: none;
@@ -189,7 +194,7 @@ textarea {
     /* margin-left: 2.4vw; */
     border-radius: 15px;
     text-align: justify;
-    max-height: 12vh;
+    max-height: 10vh;
     min-height: 8vh;
     font-size: 16px;
     padding: 10px;

@@ -16,6 +16,11 @@ $(document).ready(() => {
       "</div></div>"
     );
 
+    $(".conversation").animate({
+      scrollTop: $(
+        '.conversation').get(0).scrollHeight
+    }, 1000);
+
     $("#message-input").val("");
     history.push(message);
     sendMessage(message);
