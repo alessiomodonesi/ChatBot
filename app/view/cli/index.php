@@ -16,7 +16,12 @@ while (true) :
     ];
 
     $response = $chatbot->requestResponse($message);
+    //$response = "ciao come va";
+
     array_push($history, $input, $response);
 
-    echo $response . "\n";
+    $msg_to_show = analyzeMessage($response);
+    shell_exec("echo off | clip");
+    shell_exec("echo ".  $msg_to_show . ' | clip');
+    echo "Bot : " . $msg_to_show . "\n";
 endwhile;

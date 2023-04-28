@@ -20,3 +20,8 @@ function createHistory($msgs)
     endfor;
     echo json_encode(array('message' => $message));
 }
+
+function analyzeMessage($message){
+    $message = str_replace(';', ";\n", $message);
+    return str_replace('`', "\n", $message);
+}
