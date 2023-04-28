@@ -1,15 +1,4 @@
-var count_code = 0;
-
 $(document).ready(() => {
-  $("textarea").each(function () {
-    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
-  }).on("input", function () {
-    this.style.height = 0;
-    this.style.height = (this.scrollHeight) + "px";
-    this.style.marginTop = -34 + "px";
-  });
-
-
   var history = Array();
 
   $("#message-form").submit((event) => {
@@ -17,6 +6,7 @@ $(document).ready(() => {
     var message = $("#message-input").val();
 
     if (message.trim() === "") return;
+    history.push(message); // serve per far funzionare il tasto restart
 
     $(".conversation").append(
       '<div class="d-flex justify-content-end">' +
@@ -30,6 +20,7 @@ $(document).ready(() => {
     history.push(message);
     sendMessage(message);
 
+    // funzione per gestire l'invio del messaggio
     function sendMessage(message) {
       let wait = "Loading...";
       $(".conversation").append(
@@ -57,45 +48,9 @@ $(document).ready(() => {
           var element = document.querySelector(".user-message");
           element = document.querySelector(".bot-message");
           hljs.highlightAll();
+          count_code = 0;
         },
       });
     }
   });
 });
-
-function showCodeInBox(message) {
-  var messages = message.split("```");
-  var response = "";
-
-  for (var i = 0; i < messages.length; i++) {
-    switch (i % 2 == 0) {
-      case true:
-        response += messages[i];
-        break;
-      case false:
-        response +=
-          '<pre class="d-flex">' +
-          '<code id="message-code-' + count_code + '" >' + messages[i] + '</code>' +
-          '<button class="btn btn-light code-btn" onclick="copyCodeSelected(' + count_code + ')">' +
-          '<img class="code-img" src="/chatbot/public/img/code.png" alt="code image">' +
-          '</button>' +
-          '</pre>';
-        count_code++;
-        break;
-    }
-  }
-  return response;
-}
-
-function copyQuestion(div_id) {
-  $('#message-input').val($('#message-input').val() + $('#message-' + div_id).text());
-}
-
-function textCopy(div_id) {
-  var testo = $("#message-" + div_id).text();
-  navigator.clipboard.writeText(testo);
-}
-
-function copyCodeSelected(code_id) {
-  navigator.clipboard.writeText(document.getElementById('message-code-' + code_id).textContent);
-}
