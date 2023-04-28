@@ -53,7 +53,7 @@ input[type="text"] {
 #send-button {
     background-color: green;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
     margin-left: 1.5vw;
@@ -76,7 +76,7 @@ input[type="text"] {
 .message {
     margin-bottom: 10px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 30px;
     overflow-wrap: break-word;
     max-width: 50%;
 }
@@ -95,14 +95,14 @@ input[type="text"] {
 
 .message.bot-message.loader {
     position: relative;
-    height: 6vh;
+    height: 7vh;
 }
 
 .message.bot-message.loader:after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 15px;
+    bottom: 3px;
     width: 100%;
     height: 4px;
     background: linear-gradient(to right, #39c4b5, #00bcd4);
@@ -115,11 +115,11 @@ input[type="text"] {
     }
 
     50% {
-        width: 50%;
+        width: 30%;
     }
 
     100% {
-        width: 100%;
+        width: 95%;
     }
 }
 
