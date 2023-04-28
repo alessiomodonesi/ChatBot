@@ -9,14 +9,14 @@ $(document).ready(() => {
         // enter per invio
         else if (e.which == 13) {
             $("#send-button").click();
-            $(this).load(location.href + "#message-input");
+            // $(this).load(location.href + "#message-input");
             console.log("enter")
         }
 
         // cmd + k per cancellare la chat
         else if (e.keyCode == 75 && e.metaKey) {
             $(".message").remove();
-            $(this).load(location.href + "#message-input");
+            // $(this).load(location.href + "#message-input");
             console.log("cmd + k")
         }
     });
