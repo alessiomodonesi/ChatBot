@@ -1,7 +1,8 @@
-var history = Array();
 var count_code = 0;
 
 $(document).ready(() => {
+  var history = Array();
+
   $("#message-form").submit((event) => {
     event.preventDefault();
     var message = $("#message-input").val();
@@ -20,39 +21,39 @@ $(document).ready(() => {
     $("#message-input").val("");
     history.push(message);
     sendMessage(message);
-  });
-});
 
-function sendMessage(message) {
-  let wait = "Loading...";
-  $(".conversation").append(
-    '<div class="message bot-message loader">' + wait + "</div>"
-  );
-
-  $.ajax({
-    url: "/chatbot/app/controller/getResponse.php",
-    method: "POST",
-    data: { message: message },
-    success: (response) => {
-      var message_result = showCodeInBox(response);
-      history.push(response);
-
-      $(".conversation .loader").remove();
+    function sendMessage(message) {
+      let wait = "Loading...";
       $(".conversation").append(
-        '<div class="d-flex justify-content-start">' +
-        '<div class="message bot-message" id="message-' + history.length + '">' + message_result +
-        '<button class="btn btn-light copy-btn" onclick="textCopy(\'' + history.length + "')\">" +
-        '<img src="/chatbot/public/img/copia.png" alt="copy image" width="30" height="30"></button>' +
-        "</div></div>"
+        '<div class="message bot-message loader">' + wait + "</div>"
       );
 
-      $(".conversation").scrollTop($(".conversation")[0].scrollHeight);
-      var element = document.querySelector(".user-message");
-      element = document.querySelector(".bot-message");
-      hljs.highlightAll();
-    },
+      $.ajax({
+        url: "/chatbot/app/controller/getResponse.php",
+        method: "POST",
+        data: { message: message },
+        success: (response) => {
+          var message_result = showCodeInBox(response);
+          history.push(response);
+
+          $(".conversation .loader").remove();
+          $(".conversation").append(
+            '<div class="d-flex justify-content-start">' +
+            '<div class="message bot-message" id="message-' + history.length + '">' + message_result +
+            '<button class="btn btn-light copy-btn" onclick="textCopy(\'' + history.length + "')\">" +
+            '<img src="/chatbot/public/img/copia.png" alt="copy image" width="30" height="30"></button>' +
+            "</div></div>"
+          );
+
+          $(".conversation").scrollTop($(".conversation")[0].scrollHeight);
+          var element = document.querySelector(".user-message");
+          element = document.querySelector(".bot-message");
+          hljs.highlightAll();
+        },
+      });
+    }
   });
-}
+});
 
 function showCodeInBox(message) {
   var messages = message.split("```");
