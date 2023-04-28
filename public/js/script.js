@@ -13,7 +13,7 @@ $(document).ready(() => {
       '<div class="d-flex justify-content-end">' +
       '<div class="message user-message" id="message-' + history.length + '">' + message +
       '<button class="btn btn-light restart-btn" onclick="copyQuestion(\'' + history.length + "')\">" +
-      '<img src="/chatbot/public/img/restart.png" alt="reload image" width="22" height="22"></button>' +
+      '<img src="/chatbot/public/img/restart.png" alt="reload image" width="30" height="30"></button>' +
       "</div></div>"
     );
 
@@ -64,10 +64,12 @@ $(document).ready(() => {
           break;
         case false:
           response +=
-            '<br><button class="btn btn-light copy-btn" onclick="copyCodeSelected(' + count_code + ')">' +
-            '<img src="/chatbot/public/img/code.png" alt="copy image" width="30" height="30">' +
-            '</button><br><pre><code id="message-code-' + count_code + '" >' + messages[i] +
-            "</code></pre></br></br>";
+            '<pre class="d-flex">' +
+            '<code id="message-code-' + count_code + '" >' + messages[i] + '</code>' +
+            '<button class="btn btn-light code-btn" onclick="copyCodeSelected(' + count_code + ')">' +
+            '<img src="/chatbot/public/img/code.png" alt="code image" width="30" height="30">' +
+            '</button>' +
+            '</pre>';
           count_code++;
           break;
       }
