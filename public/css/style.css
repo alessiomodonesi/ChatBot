@@ -29,12 +29,17 @@ body {
     margin-bottom: 20px;
 }
 
+.bot-logo {
+    height: 72px;
+    width: 72px;
+}
+
 .bot-icon {
     background-color: green;
     border-radius: 50%;
-    height: 60px;
+    height: 80px;
+    width: 80px;
     text-align: center;
-    width: 60px;
     margin-right: 10px;
 }
 
@@ -122,27 +127,42 @@ input[type="text"] {
     align-self: end;
     cursor: pointer;
     scale: 75%;
-    width: 4vw;
-    height: width;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+}
+
+.restart-img {
+    height: 30px;
+    width: 30px;
 }
 
 .copy-btn {
     align-self: end;
     cursor: pointer;
     scale: 75%;
-    width: 4vw;
-    height: width;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+}
+
+.copy-img {
+    height: 30px;
+    width: 30px;
 }
 
 .code-btn {
     cursor: pointer;
     align-self: end;
     scale: 75%;
-    width: 4vw;
-    height: width;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+}
+
+.code-img {
+    height: 30px;
+    width: 30px;
 }
 
 textarea {

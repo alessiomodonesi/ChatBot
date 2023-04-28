@@ -13,7 +13,7 @@ $(document).ready(() => {
       '<div class="d-flex justify-content-end">' +
       '<div class="message user-message" id="message-' + history.length + '">' + message +
       '<button class="btn btn-light restart-btn" onclick="copyQuestion(\'' + history.length + "')\">" +
-      '<img src="/chatbot/public/img/restart.png" alt="reload image" width="30" height="30"></button>' +
+      '<img class="restart-img" src="/chatbot/public/img/restart.png" alt="reload image"></button>' +
       "</div></div>"
     );
 
@@ -40,7 +40,7 @@ $(document).ready(() => {
             '<div class="d-flex justify-content-start">' +
             '<div class="message bot-message" id="message-' + history.length + '">' + message_result +
             '<button class="btn btn-light copy-btn" onclick="textCopy(\'' + history.length + "')\">" +
-            '<img src="/chatbot/public/img/copia.png" alt="copy image" width="30" height="30"></button>' +
+            '<img class="copy-img" src="/chatbot/public/img/copia.png" alt="copy image"></button>' +
             "</div></div>"
           );
 
@@ -68,7 +68,7 @@ function showCodeInBox(message) {
           '<pre class="d-flex">' +
           '<code id="message-code-' + count_code + '" >' + messages[i] + '</code>' +
           '<button class="btn btn-light code-btn" onclick="copyCodeSelected(' + count_code + ')">' +
-          '<img src="/chatbot/public/img/code.png" alt="code image" width="30" height="30">' +
+          '<img class="code-img" src="/chatbot/public/img/code.png" alt="code image">' +
           '</button>' +
           '</pre>';
         count_code++;
