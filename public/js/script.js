@@ -8,7 +8,6 @@ $(document).ready(() => {
     var message = $("#message-input").val();
 
     if (message.trim() === "") return;
-    history.push(message);
 
     $(".conversation").append(
       '<div class="d-flex justify-content-end">' +
