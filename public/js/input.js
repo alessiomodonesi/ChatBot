@@ -11,8 +11,8 @@ $(document).ready(() => {
             e.preventDefault();
         }
 
-        // cmd + k per cancellare la chat
-        else if (e.keyCode == 75 && e.metaKey) {
+        // ctrl + k per cancellare la chat
+        else if (e.keyCode == 75 && e.ctrlKey) {
             $(".message").remove();
             $("#message-input").val("");
             e.preventDefault();
