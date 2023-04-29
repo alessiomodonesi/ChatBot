@@ -2,7 +2,7 @@
 
 function setInput()
 {
-    echo "Type your message here: ";
+    echo "You: ";
     $handle = fopen("php://stdin", "r");
     return fgets($handle);
 }
@@ -21,7 +21,8 @@ function createHistory($msgs)
     echo json_encode(array('message' => $message));
 }
 
-function analyzeMessage($message){
+function indent($message)
+{
     $message = str_replace(';', ";\n", $message);
     return str_replace('`', "\n", $message);
 }

@@ -15,13 +15,13 @@ while (true) :
         ]
     ];
 
-    $response = $chatbot->requestResponse($message);
-    //$response = "ciao come va";
-
+    $response = indent($chatbot->requestResponse($message));
     array_push($history, $input, $response);
+    echo "ChatBot: " . $response . "\n";
 
-    $msg_to_show = analyzeMessage($response);
-    shell_exec("echo off | clip");
-    shell_exec("echo ".  $msg_to_show . ' | clip');
-    echo "Bot : " . $msg_to_show . "\n";
+    // copia l'ultima response
+    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
+        shell_exec("echo " .  $response . ' | clip');
+    else
+        shell_exec("echo " .  $response . ' | pbcopy');
 endwhile;
