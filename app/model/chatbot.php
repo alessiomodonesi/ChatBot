@@ -9,12 +9,17 @@ use Orhanerday\OpenAi\OpenAi;
 
 class ChatBot
 {
-    // private $open_ai_key = getenv('OPENAI_API_KEY');
-    private $open_ai_key = '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';
+    private function getKey()
+    {
+        if (php_sapi_name() === 'cli')
+            return file_get_contents("../.key");
+        else
+            return file_get_contents("http://localhost/.key");
+    }
 
     private function init()
     {
-        $open_ai = new OpenAi($this->open_ai_key);
+        $open_ai = new OpenAi($this->getKey());
         return $open_ai;
     }
 
