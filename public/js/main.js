@@ -38,6 +38,9 @@ $(document).ready(() => {
         element = document.querySelector(".bot-message");
         hljs.highlightAll();
       },
+      error: (error) => {
+        console.error(error);
+      }
     });
   });
 });
