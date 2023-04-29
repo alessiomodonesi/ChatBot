@@ -1,6 +1,6 @@
-$.getScript('/chatbot/public/js/load.js', () => {
-  console.log('File caricati correttamente!');
-});
+$.getScript('/chatbot/public/js/functions.js');
+$.getScript('/chatbot/public/js/input.js');
+$.getScript('/chatbot/public/js/textarea.js');
 
 $(document).ready(() => {
   var history = Array();
