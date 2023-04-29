@@ -17,11 +17,5 @@ while (true) :
 
     $response = indent($chatbot->requestResponse($message));
     array_push($history, $input, $response);
-    echo "ChatBot: " . $response . "\n";
-
-    // copia l'ultima response
-    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
-        shell_exec("echo " .  $response . ' | clip');
-    else
-        shell_exec("echo " .  $response . ' | pbcopy');
+    echo "Bot: " . $response . "\n";
 endwhile;
