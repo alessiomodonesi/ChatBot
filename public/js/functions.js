@@ -36,8 +36,8 @@ function copyCodeSelected(code_id) {
 
 // funzione per mostrare correttamente del codice contenuto nella risposta
 function showCodeInBox(message) {
-    var messages = message.split("```");
     var response = "";
+    var messages = message.split("```");
 
     for (var i = 0; i < messages.length; i++) {
         switch (i % 2 == 0) {
