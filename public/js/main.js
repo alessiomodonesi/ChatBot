@@ -1,3 +1,7 @@
+$.getScript('/chatbot/public/js/load.js', () => {
+  console.log('File caricati correttamente!');
+});
+
 $(document).ready(() => {
   var history = Array();
 

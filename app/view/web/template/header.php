@@ -26,7 +26,4 @@
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
 
 <!-- script.js -->
-<script type="text/javascript" src="/chatbot/public/js/input.js"></script>
-<script type="text/javascript" src="/chatbot/public/js/textarea.js"></script>
-<script type="text/javascript" src="/chatbot/public/js/functions.js"></script>
 <script type="text/javascript" src="/chatbot/public/js/main.js"></script>
