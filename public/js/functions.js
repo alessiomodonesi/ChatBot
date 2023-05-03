@@ -36,14 +36,15 @@ function copyCodeSelected(code_id) {
 
 // funzione per mostrare correttamente del codice contenuto nella risposta
 function showCodeInBox(message) {
-    if (message === 'error, wait 3 seconds') {
-        setTimeout(() => {
-            location.reload();
-        }, 3000);
-    }
-
     var response = "";
     var messages = message.split("```");
+    let allert = "Ehy, la parola inserita non è consentita";
+
+    if (message === allert) {
+        setTimeout(() => {
+            location.reload();
+        }, 2500);
+    }
 
     for (var i = 0; i < messages.length; i++) {
         switch (i % 2 == 0) {
