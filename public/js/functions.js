@@ -38,7 +38,7 @@ function copyCodeSelected(code_id) {
 function showCodeInBox(message) {
     var response = "";
     var messages = message.split("```");
-    let allert = "Ehy, la parola inserita non è consentita";
+    let allert = "Ehy, il messaggio inserito non è consentito";
 
     if (message === allert) {
         setTimeout(() => {

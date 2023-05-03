@@ -11,7 +11,7 @@ $chatbot = new ChatBot();
 $filter = new Filter();
 
 if ($filter->checkString($_POST['message'])) {
-    $allert = "Ehy, la parola inserita non è consentita";
+    $allert = "Ehy, il messaggio inserito non è consentito";
     echo json_encode($allert);
     die();
 }
