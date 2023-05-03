@@ -1,3 +1,4 @@
+$.getScript('/chatbot/public/js/modal.js');
 $.getScript('/chatbot/public/js/functions.js');
 $.getScript('/chatbot/public/js/input.js');
 let count_code = 0;

@@ -3,6 +3,7 @@
 
 <head>
     <?php require('../app/view/web/template/header.php'); ?>
+    <?php require('../app/view/web/template/modal.php'); ?>
 </head>
 
 <body>
