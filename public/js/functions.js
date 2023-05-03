@@ -9,12 +9,22 @@ function get_user_message(history, message) {
 }
 
 // funzione per restituire html del messaggio del bot
-function get_bot_message(history, result) {
-    var bot_message = '<div class="d-flex justify-content-start">' +
-        '<div class="message bot-message" id="message-' + history.length + '">' + result +
-        '<button class="btn btn-light copy-btn" onclick="textCopy(\'' + history.length + "')\">" +
-        '<img class="copy-img" src="/chatbot/public/img/copia.png" alt="copy image">' +
-        '</button></div></div>';
+function get_bot_message(history, result, notCopy) {
+    var bot_message = "";
+
+    if (notCopy == true) { //non inserisce il bottone per copiare il testo
+        bot_message = '<div class="d-flex justify-content-start">' +
+            '<div class="message bot-message" id="message-' + history.length + '">' + result +
+            '</div></div>';
+    }
+    else {
+        bot_message = '<div class="d-flex justify-content-start">' +
+            '<div class="message bot-message" id="message-' + history.length + '">' + result +
+            '<button class="btn btn-light copy-btn" onclick="textCopy(\'' + history.length + "')\">" +
+            '<img class="copy-img" src="/chatbot/public/img/copia.png" alt="copy image">' +
+            '</button></div></div>';
+    }
+
     return bot_message;
 }
 

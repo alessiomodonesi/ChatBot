@@ -30,6 +30,8 @@ $(document).ready(() => {
         var message_result = showCodeInBox(response);
         history.push(response);
 
+        //console.log(response);
+
         $(".conversation .loader").remove();
         $(".conversation").append(get_bot_message(history, message_result));
         $(".conversation").scrollTop($(".conversation")[0].scrollHeight);
@@ -37,10 +39,18 @@ $(document).ready(() => {
         var element = document.querySelector(".user-message");
         element = document.querySelector(".bot-message");
         hljs.highlightAll();
-        console.clear();
+        //console.clear();
       },
       error: (error) => {
         console.error(error);
+
+        let errorMessage = "C'è stato un problema nell'analizzare la tua domanda, ti chiedo di riproporre la domanda oppure di modificarla";
+        history.push(errorMessage);
+
+        $(".conversation .loader").remove();
+        $(".conversation").append(get_bot_message(history, errorMessage, true));
+        $(".conversation").scrollTop($(".conversation")[0].scrollHeight);
+        hljs.highlightAll();
       }
     });
   });
