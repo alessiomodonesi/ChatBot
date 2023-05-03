@@ -8,10 +8,10 @@ if (!isset($_POST['message']))
     die("error: missing message");
 
 $chatbot = new ChatBot();
-
 $filter = new Filter();
-if($filter->checkString($_POST['message'])){
-    echo json_encode("Messaggio invalido");
+
+if ($filter->checkString($_POST['message'])) {
+    echo json_encode("error, wait 3 seconds");
     die();
 }
 
@@ -21,6 +21,7 @@ $message = [
         "content" => $_POST['message']
     ]
 ];
+
 $response = $chatbot->requestResponse($message);
 echo json_encode($response, JSON_PRETTY_PRINT);
 die();
