@@ -36,6 +36,9 @@ function copyCodeSelected(code_id) {
 
 // funzione per mostrare correttamente del codice contenuto nella risposta
 function showCodeInBox(message) {
+    if(message == 'Messaggio invalido'){
+        location.reload();
+    }
     var response = "";
     var messages = message.split("```");
 

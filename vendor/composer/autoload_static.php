@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit623339460ce70a11dde7eb37dccfb8c4
 {
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Snipe\\BanBuilder\\' => 17,
+        ),
         'O' => 
         array (
             'Orhanerday\\OpenAi\\' => 18,
@@ -14,6 +18,10 @@ class ComposerStaticInit623339460ce70a11dde7eb37dccfb8c4
     );
 
     public static $prefixDirsPsr4 = array (
+        'Snipe\\BanBuilder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/snipe/banbuilder/src',
+        ),
         'Orhanerday\\OpenAi\\' => 
         array (
             0 => __DIR__ . '/..' . '/orhanerday/open-ai/src',

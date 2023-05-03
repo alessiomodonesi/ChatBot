@@ -6,5 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Snipe\\BanBuilder\\' => array($vendorDir . '/snipe/banbuilder/src'),
     'Orhanerday\\OpenAi\\' => array($vendorDir . '/orhanerday/open-ai/src'),
 );
