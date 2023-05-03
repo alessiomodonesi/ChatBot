@@ -1,4 +1,3 @@
-<!-- Modal -->
 <div class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -15,5 +14,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>
