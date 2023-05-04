@@ -50,11 +50,11 @@ function showCodeInBox(message) {
     var messages = message.split("```");
     let allert = "Ehy, il messaggio inserito non è consentito";
 
-    if (message === allert) {
-        setTimeout(() => {
-            location.reload();
-        }, 2500);
-    }
+    // if (message === allert) {
+    //     setTimeout(() => {
+    //         location.reload();
+    //     }, 2500);
+    // }
 
     for (var i = 0; i < messages.length; i++) {
         switch (i % 2 == 0) {

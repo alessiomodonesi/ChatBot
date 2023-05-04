@@ -30,8 +30,6 @@ $(document).ready(() => {
         var message_result = showCodeInBox(response);
         history.push(response);
 
-        //console.log(response);
-
         $(".conversation .loader").remove();
         $(".conversation").append(get_bot_message(history, message_result));
         $(".conversation").scrollTop($(".conversation")[0].scrollHeight);
@@ -44,7 +42,7 @@ $(document).ready(() => {
       error: (error) => {
         console.error(error);
 
-        let errorMessage = "C'è stato un problema nell'analizzare la tua domanda, ti chiedo di riproporre la domanda oppure di modificarla";
+        let errorMessage = "C'è stato un problema nell'analizzare la tua domanda, ti chiediamo di riformulare la richiesta";
         history.push(errorMessage);
 
         $(".conversation .loader").remove();
