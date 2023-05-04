@@ -14,7 +14,7 @@ class Filter
     public function __construct()
     {
         $this->censor = new CensorWords;
-        $languages = array('en-us', 'en-uk', 'es', 'kr', 'fr', 'nl', 'no', 'de', 'fi', 'it', 'jp', 'cs');
+        $languages = array('en-us', 'en-uk', 'it');
         $this->censor->setDictionary($languages);
     }
 
