@@ -1,6 +1,9 @@
+// Carica i file js del progetto
 $.getScript('/chatbot/public/js/modal.js');
 $.getScript('/chatbot/public/js/functions.js');
 $.getScript('/chatbot/public/js/input.js');
+
+// Variabile per tenere traccia del numero di codici inseriti
 let count_code = 0;
 
 $(document).ready(() => {
@@ -10,18 +13,23 @@ $(document).ready(() => {
   $("#message-form").submit((event) => {
     event.preventDefault();
     var message = $("#message-input").val();
-
+    // Se il messaggio è vuoto, non fare nulla
     if (message.trim() === '') return;
     history.push(message);
-
+    
+    // Mostra il messaggio dell'utente nella conversazione
     $(".conversation").append(get_user_message(history, message));
     $(".conversation").animate({
       scrollTop: $('.conversation').get(0).scrollHeight
     }, 1000);
-
+    
+    // Svuota l'input del messaggio
     $("#message-input").val('');
+
+    // Aggiungi messaggio di caricamento
     $(".conversation").append('<div class="message loader-message loader">' + wait + '</div>');
 
+    // Effettua la richiesta AJAX per ottenere la risposta dal server
     $.ajax({
       url: "/chatbot/app/controller/getResponse.php",
       method: "POST",
@@ -36,6 +44,8 @@ $(document).ready(() => {
 
         var element = document.querySelector(".user-message");
         element = document.querySelector(".bot-message");
+
+        // Evidenzia la sintassi del codice
         hljs.highlightAll();
       },
       error: (error) => {
