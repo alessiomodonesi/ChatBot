@@ -37,7 +37,6 @@ $(document).ready(() => {
         var element = document.querySelector(".user-message");
         element = document.querySelector(".bot-message");
         hljs.highlightAll();
-        //console.clear();
       },
       error: (error) => {
         console.error(error);

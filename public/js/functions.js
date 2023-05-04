@@ -30,6 +30,7 @@ function get_bot_message(history, result, notCopy) {
 
 // funzione per copiare la domanda nell'input
 function copyQuestion(div_id) {
+    $("#message-input").val('');
     $('#message-input').val($('#message-input').val() + $('#message-' + div_id).text());
 }
 
@@ -48,7 +49,7 @@ function copyCodeSelected(code_id) {
 function showCodeInBox(message) {
     var response = "";
     var messages = message.split("```");
-    let allert = "Ehy, il messaggio inserito non è consentito";
+    // let allert = "Ehy, il messaggio inserito non è consentito";
 
     // if (message === allert) {
     //     setTimeout(() => {
