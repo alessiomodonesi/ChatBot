@@ -10,7 +10,7 @@ $filter = new Filter();
 
 // Crea una nuova array vuota per contenere la cronologia della chat
 $history = array();
-
+$path = createFile();
 while (true) :
     // Richiama la funzione setInput() per impostare l'input dell'utente
     $input = setInput();
@@ -26,7 +26,9 @@ while (true) :
                 "content" => $input
             ]
         ];
+        saveMessageOnFile($input, $path);
         // Aggiunge il messaggio dell'utente e la risposta alla cronologia della chat
+        saveMessageOnFile($response, $path);
         $response = indent($chatbot->requestResponse($message));
     }
     // Stampa la risposta del ChatBot

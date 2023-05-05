@@ -7,6 +7,8 @@
             <div class="modal-body">
                 <p>Per accedere al sito è necessario accettare i termini del GDPR.
                     Se hai meno di 18 anni, chiedi il consenso dei tuoi genitori o del tutore legale.</p>
+                <p>Inserisci la tua mail</p>
+                <input id="mail_utente" type="email" class="form-control" placeholder="example@gmail.com" required></input>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary accetto-btn">Accetto</button>

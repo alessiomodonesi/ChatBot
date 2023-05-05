@@ -31,3 +31,22 @@ function indent($message)
     $message = str_replace(';', ";\n", $message);
     return str_replace('`', "\n", $message);
 }
+
+//funzione per generare il nome casuale della prenotazione
+function createFile() {
+    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    $name = '';
+    for ($i = 0; $i < 16; $i++) {
+        $name .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    $file = fopen($name . '.txt', 'w');
+    fclose($file);
+    return $name;
+}
+
+
+function saveMessageOnFile($message, $path){
+    $file = fopen($path , 'a');
+    fwrite($file, $message);
+    fclose($file);
+}
