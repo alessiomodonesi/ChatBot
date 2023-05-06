@@ -1,6 +1,7 @@
 {
     "require": {
         "orhanerday/open-ai": "^4.7",
-        "snipe/banbuilder": "^2.3"
+        "snipe/banbuilder": "^2.3",
+        "phpmailer/phpmailer": "^6.8"
     }
 }

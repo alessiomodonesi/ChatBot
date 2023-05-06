@@ -11,6 +11,10 @@ class ComposerStaticInit623339460ce70a11dde7eb37dccfb8c4
         array (
             'Snipe\\BanBuilder\\' => 17,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'O' => 
         array (
             'Orhanerday\\OpenAi\\' => 18,
@@ -21,6 +25,10 @@ class ComposerStaticInit623339460ce70a11dde7eb37dccfb8c4
         'Snipe\\BanBuilder\\' => 
         array (
             0 => __DIR__ . '/..' . '/snipe/banbuilder/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Orhanerday\\OpenAi\\' => 
         array (

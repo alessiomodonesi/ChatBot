@@ -1,4 +1,8 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPOffice\PHPOffice\PHPSpreadsheet;
+use PHPMailer\PHPMailer\Exception;
 //stampa una stringa "You: " e legge l'input dell'utente dallo standard input.
 //e restituisce la stringa letta dall'utente.
 function setInput()
@@ -50,3 +54,32 @@ function saveMessageOnFile($message, $path){
     fwrite($file, $message);
     fclose($file);
 }
+
+ function SendEmail($email, $password)
+    {
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->Username = "sandwech.amministrazione.test@gmail.com";
+        $mail->Password = "jnupkpmzolyfmcpf";
+        $mail->SMTPSecure = "tls";
+        $mail->Port = 587;
+
+        $mail->setFrom("sandwech.amministrazione.test@gmail.com");
+        $mail->addAddress($email);
+        $mail->isHTML(true);
+        $mail->Subject = "Prova PHPMailSender";
+        $mail->Body = "ecco la password : " . $password . "";
+
+        if (!$mail->send()) {
+            /*
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+            */
+            return $mail->ErrorInfo;
+        } else {
+            //echo 'Message has been sent';
+            return true;
+        }
+    }

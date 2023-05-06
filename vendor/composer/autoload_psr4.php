@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Snipe\\BanBuilder\\' => array($vendorDir . '/snipe/banbuilder/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Orhanerday\\OpenAi\\' => array($vendorDir . '/orhanerday/open-ai/src'),
 );
