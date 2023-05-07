@@ -73,10 +73,9 @@ function saveMessageOnFile($message, $path){
         $mail->Body = "ecco la password : " . $password . "";
 
         if (!$mail->send()) {
-            /*
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
-            */
+            
             return $mail->ErrorInfo;
         } else {
             //echo 'Message has been sent';
