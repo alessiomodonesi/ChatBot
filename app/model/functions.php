@@ -1,8 +1,8 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPOffice\PHPOffice\PHPSpreadsheet;
-use PHPMailer\PHPMailer\Exception;
+//use PHPMailer\PHPMailer\PHPMailer;
+//use PHPOffice\PHPOffice\PHPSpreadsheet;
+//use PHPMailer\PHPMailer\Exception;
 //stampa una stringa "You: " e legge l'input dell'utente dallo standard input.
 //e restituisce la stringa letta dall'utente.
 function setInput()
@@ -37,7 +37,7 @@ function indent($message)
 }
 
 //funzione per generare il nome casuale della prenotazione
-function createFile() {
+/*function createFile() {
     $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     $name = '';
     for ($i = 0; $i < 16; $i++) {
@@ -53,9 +53,9 @@ function saveMessageOnFile($message, $path){
     $file = fopen($path , 'a');
     fwrite($file, $message);
     fclose($file);
-}
+}*/
 
- function SendEmail($email, $password)
+/*function SendEmail($email, $password)
     {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
@@ -82,4 +82,4 @@ function saveMessageOnFile($message, $path){
             //echo 'Message has been sent';
             return true;
         }
-    }
+    }*/
