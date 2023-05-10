@@ -76,3 +76,9 @@ function showCodeInBox(message) {
     }
     return response;
 }
+
+/*
+function sendEmail(){
+     fetch('http://localhost/ChatBot/app/controller/getHistoryEmail.php', {method : 'POST', data : {email : email della sessione , history : history}}
+}
+*/
