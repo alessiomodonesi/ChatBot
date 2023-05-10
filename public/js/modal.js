@@ -3,6 +3,8 @@ $(document).ready(() => {
         $('.modal').modal('show');
 
     $(".accetto-btn").click(function () {
+        //if(document.getElementById("mail_utente").value == null)
+            //return false;
         sessionStorage.setItem("GDPR", "true"); 
         //sessionStorage.setItem("mail_utente", document.getElementById("mail_utente").value);
         $('.modal').modal('toggle');
