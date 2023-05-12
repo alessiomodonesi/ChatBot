@@ -44,14 +44,13 @@ function createFile() {
     for ($i = 0; $i < 16; $i++) {
         $name .= $characters[rand(0, strlen($characters) - 1)];
     }
-    $file = fopen($name . '.txt', 'w');
+    $file = fopen(getcwd() . '/public/history/'. $name . '.txt', 'w');
     fclose($file);
-    return $name;
+    return getcwd() . '/public/history/'. $name . '.txt';
 }
 
-
 function saveMessageOnFile($message, $path){
-    $file = fopen($path , 'a');
+    $file = fopen($path, 'a');
     fwrite($file, $message);
     fclose($file);
 }
