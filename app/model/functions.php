@@ -57,7 +57,7 @@ function saveMessageOnFile($message, $path)
     fclose($file);
 }
 
-function SendEmail()
+function SendEmail()//Passare chi deve ricevere il messaggio  $ricevente
 {
 
     $ini = parse_ini_file("../../../Chatbot.txt", true);
@@ -76,7 +76,8 @@ function SendEmail()
         $mail->Password = $ini['password'];
         $mail->setFrom("chatbot5fmarchesini@gmail.com");
         $mail->addReplyTo("chatbot5fmarchesini@gmail.com");
-        $mail->addAddress("chri3775@gmail.com");
+        $mail->addAddress("chri3775@gmail.com");//Da cambiare con chi riceverà il messaggio
+        /*$mail->addAddress($ricevente);*/
         $mail->Subject = 'Checking if PHPMailer works';
         //$mail->msgHTML("ciao");
         $mail->Body = 'This is just a plain text message body';
