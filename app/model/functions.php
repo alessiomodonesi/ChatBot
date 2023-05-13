@@ -1,5 +1,5 @@
 <?php
-require(getcwd() . "/vendor/autoload.php");
+require("../../vendor/autoload.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPOffice\PHPOffice\PHPSpreadsheet;
@@ -38,47 +38,55 @@ function indent($message)
 }
 
 //funzione per generare il nome casuale della prenotazione
-function createFile() {
+function createFile()
+{
     $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     $name = '';
     for ($i = 0; $i < 16; $i++) {
         $name .= $characters[rand(0, strlen($characters) - 1)];
     }
-    $file = fopen(getcwd() . '/public/history/'. $name . '.txt', 'w');
+    $file = fopen(getcwd() . '/public/history/' . $name . '.txt', 'w');
     fclose($file);
-    return getcwd() . '/public/history/'. $name . '.txt';
+    return getcwd() . '/public/history/' . $name . '.txt';
 }
 
-function saveMessageOnFile($message, $path){
+function saveMessageOnFile($message, $path)
+{
     $file = fopen($path, 'a');
     fwrite($file, $message);
     fclose($file);
 }
 
-function SendEmail($email, $password)
-    {
-        $mail = new PHPMailer(true);
+function SendEmail()
+{
+
+    $ini = parse_ini_file("../../../Chatbot.txt", true);
+
+    //echo($ini["password"]);
+
+        
+        $mail = new PHPMailer();
         $mail->isSMTP();
+        $mail->SMTPDebug = 2;
         $mail->Host = "smtp.gmail.com";
-        $mail->SMTPAuth = true;
-        //$mail->Username = "sandwech.amministrazione.test@gmail.com";
-        //$mail->Password = "";
-        $mail->SMTPSecure = "tls";
         $mail->Port = 587;
-
-        //$mail->setFrom("sandwech.amministrazione.test@gmail.com");
-        $mail->addAddress($email);
-        $mail->isHTML(true);
-        $mail->Subject = "Prova PHPMailSender";
-        $mail->Body = "ecco la password : " . $password . "";
-
+        $mail->SMTPSecure = "tls";
+        $mail->SMTPAuth = true;
+        $mail->Username = "chatbot5fmarchesini@gmail.com";
+        $mail->Password = $ini['password'];
+        $mail->setFrom("chatbot5fmarchesini@gmail.com");
+        $mail->addReplyTo("chatbot5fmarchesini@gmail.com");
+        $mail->addAddress("chri3775@gmail.com");
+        $mail->Subject = 'Checking if PHPMailer works';
+        //$mail->msgHTML("ciao");
+        $mail->Body = 'This is just a plain text message body';
+        //$mail->addAttachment('attachment.txt');
         if (!$mail->send()) {
-            echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
-            
-            return $mail->ErrorInfo;
         } else {
-            //echo 'Message has been sent';
-            return true;
+            echo 'The email message was sent.';
         }
-    }
+        
+
+        
+}
