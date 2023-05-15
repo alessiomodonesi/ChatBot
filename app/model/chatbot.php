@@ -1,12 +1,13 @@
 <?php
+
 // controllare se il file viene eseguito dalla riga di comando o tramite una richiesta HTTP 
-//e richiede la libreria di caricamento appropriata di conseguenza
+// e richiede la libreria di caricamento appropriata di conseguenza
 if (php_sapi_name() === 'cli')
     require(getcwd() . "/vendor/autoload.php");
 else
     require("../../vendor/autoload.php");
 
-use Orhanerday\OpenAi\OpenAi; //serve per interagire con il servizio OpenAI GPT-3.5
+use Orhanerday\OpenAi\OpenAi; // serve per interagire con il servizio OpenAI GPT-3.5
 
 class ChatBot
 {
@@ -21,12 +22,13 @@ class ChatBot
             return file_get_contents("http://localhost/.key");
     }
 
-    //crea un'istanza dell'oggetto OpenAi usando la chiave restituita dalla funzione getKey.
+    // crea un'istanza dell'oggetto OpenAi usando la chiave restituita dalla funzione getKey.
     private function init()
     {
         $open_ai = new OpenAi($this->getKey());
         return $open_ai;
     }
+
     /*invia una richiesta al servizio OpenAI passando un array di messaggi,
      il modello di lingua da utilizzare, la temperatura di campionamento,
      il numero massimo di token, il penalty di frequenza e il penalty di presenza.*/
