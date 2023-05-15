@@ -6,7 +6,7 @@ if (php_sapi_name() === 'cli')
 else
     require("../../vendor/autoload.php");
 
-use Orhanerday\OpenAi\OpenAi;//serve per interagire con il servizio OpenAI GPT-3.5
+use Orhanerday\OpenAi\OpenAi; //serve per interagire con il servizio OpenAI GPT-3.5
 
 class ChatBot
 {

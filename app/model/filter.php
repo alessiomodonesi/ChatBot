@@ -6,7 +6,7 @@ if (php_sapi_name() === 'cli')
 else
     require("../../vendor/autoload.php");
 
-use Snipe\BanBuilder\CensorWords;//libreria per filtrare le parole offensive in un messaggio
+use Snipe\BanBuilder\CensorWords; //libreria per filtrare le parole offensive in un messaggio
 
 
 class Filter

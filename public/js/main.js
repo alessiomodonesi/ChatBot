@@ -16,13 +16,13 @@ $(document).ready(() => {
     // Se il messaggio è vuoto, non fare nulla
     if (message.trim() === '') return;
     history.push(message);
-    
+
     // Mostra il messaggio dell'utente nella conversazione
     $(".conversation").append(get_user_message(history, message));
     $(".conversation").animate({
       scrollTop: $('.conversation').get(0).scrollHeight
     }, 1000);
-    
+
     // Svuota l'input del messaggio
     $("#message-input").val('');
 
