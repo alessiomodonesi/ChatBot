@@ -1,7 +1,7 @@
 <?php
 
 require "../model/chatbot.php";
-require "../model/functions.php";
+require "../model/email.php";
 
 header('Content-type: application/json');
 
@@ -15,3 +15,4 @@ $response = SendEmail($_GET['email']);
 
 echo json_encode(["message" => $response]);
 die();
+  

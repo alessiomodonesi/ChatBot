@@ -77,8 +77,13 @@ function showCodeInBox(message) {
     return response;
 }
 
-/*
-function sendEmail(){
-     fetch('http://localhost/ChatBot/app/controller/getHistoryEmail.php', {method : 'POST', data : {email : email della sessione , history : history}}
+
+async function sendEmail(){
+    const response = await fetch('http://localhost/chatbot/app/controller/sendEmailHistory.php',{
+        method: 'POST',
+        data : {
+            mail : sessionStorage.getItem('mail')
+        }
+    });
+    return response.json();
 }
-*/

@@ -3,13 +3,11 @@ $(document).ready(() => {
         $('.modal').modal('show');
 
     $(".accetto-btn").click(function () {
-
-        var validation_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (document.getElementById("mail_utente").value.match(validation_email)) {
+        console.log(document.getElementById("mail_utente").value);
+        if (!validateEmail(document.getElementById("mail_utente").value)) {
             alert('Inserisci una mail per piacere');
             return false;
         }
-        console.log(document.getElementById("mail_utente").value);
         sessionStorage.setItem("GDPR", "true");
         sessionStorage.setItem("mail_utente", document.getElementById("mail_utente").value);
         $('.modal').modal('toggle');
@@ -19,4 +17,10 @@ $(document).ready(() => {
         sessionStorage.setItem("GDPR", "false");
         alert("Per utilizzare questo sito devi accettare l'informativa");
     });
+
+    function validateEmail(email) {
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    }
 });;

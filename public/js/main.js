@@ -7,6 +7,7 @@ $.getScript('/chatbot/public/js/input.js');
 let count_code = 0;
 
 $(document).ready(() => {
+  getFilesName();
   var history = Array();
   var wait = "Caricamento...";
 
@@ -62,3 +63,16 @@ $(document).ready(() => {
     });
   });
 });
+
+function getFilesName(){
+  const url = 'http://localhost/chatbot/app/controller/getFilesName.php';
+
+  const httpreq = new XMLHttpRequest();
+  httpreq.onreadystatechange = function (){console.log(httpreq.responseText)};
+  httpreq.open('GET', url, true);
+  httpreq.send();
+}
+
+function showFilesName(){
+  -
+}
